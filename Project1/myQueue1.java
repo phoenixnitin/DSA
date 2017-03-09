@@ -35,6 +35,5 @@ public class myQueue1<E> extends ArrayStack{
 			queue.enqueue(i);
 		for (int i = 1;i<=10;i++)
 			queue.dequeue();
-		
 	}
 }

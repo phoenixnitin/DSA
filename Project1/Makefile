@@ -7,7 +7,8 @@ JC = javac
 CLASSES = \
 		Stack.java \
 		ArrayStack.java \
-		myQueue1.java
+		myQueue1.java \
+		myQueue2.java
 
 default: classes
 
