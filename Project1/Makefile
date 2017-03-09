@@ -8,7 +8,9 @@ CLASSES = \
 		Stack.java \
 		ArrayStack.java \
 		myQueue1.java \
-		myQueue2.java
+		myQueue2.java \
+		Queue.java \
+		myQueue1a.java
 
 default: classes
 

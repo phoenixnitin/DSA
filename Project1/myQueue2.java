@@ -25,6 +25,10 @@ public class myQueue2<E> extends ArrayStack{
 		myQueue2<Integer> queue = new myQueue2<Integer>();
 		for (int i = 1;i<=10;i++)
 			queue.enqueue(i);
+		for (int i = 1;i<=5;i++)
+			System.out.println("Dequeue = "+queue.dequeue());
+		for (int i = 11;i<=20;i++)
+			queue.enqueue(i);
 		for (int i = 1;i<=10;i++)
 			System.out.println("Dequeue = "+queue.dequeue());
 	}
