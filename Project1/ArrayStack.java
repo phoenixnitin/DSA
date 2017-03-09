@@ -2,9 +2,9 @@ import java.lang.*;
 import java.util.*;
 
 public class ArrayStack<E> implements Stack<E> {
-    private int max_size = 100;
+    private int max_size = 100000;
     private int top = -1;
-    private ArrayList<E> Arr = new ArrayList<E>();
+    private E[] Arr = (E[])new Object[max_size];
 
     public int size(){
       return top;
@@ -19,11 +19,11 @@ public class ArrayStack<E> implements Stack<E> {
         {
           throw new EmptyStackException();
         }
-      return Arr.get(top);
+      return Arr[top];
     };
 
     public void push (E element){
-    	Arr.add(++top,element);
+    	Arr[++top] = element;
     };
 
     public E pop() throws EmptyStackException{
@@ -31,8 +31,8 @@ public class ArrayStack<E> implements Stack<E> {
       {
         throw new EmptyStackException();
       }
-    	E result = Arr.get(top);
-    	Arr.remove(top--);
+    	E result = Arr[top];
+    	Arr[top--] = null;
     	return result;
     };
 
@@ -44,7 +44,7 @@ public class ArrayStack<E> implements Stack<E> {
       arr.pop();
       arr.push("Third");
       arr.push("Fourth");
-      arr.push("Fifth");
+      
     	String str = arr.pop();
     	boolean bool=arr.isEmpty();
       str = arr.top();

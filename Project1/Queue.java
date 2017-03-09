@@ -41,5 +41,5 @@ public interface Queue<E> {
 	* @return element removed.
 	* @exception EmptyQueueException if the queue is empty.
 	*/
-public E dequeue() throws EmptyQueueException;
+	public E dequeue() throws EmptyQueueException;
 }
