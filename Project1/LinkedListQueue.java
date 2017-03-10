@@ -2,57 +2,57 @@ import java.lang.*;
 import java.util.*;
 
 public class LinkedListQueue<E> implements Queue<E>{
-	LinkedList<E> ll = new LinkedList<E>();
+	LinkedList<E> linkedlist = new LinkedList<E>();
 	private int Q_size=100000;
 	public int size(){
-		return ll.size();
+		return linkedlist.size();
 	};
 
 	public boolean isEmpty(){
-		return (ll.size() == 0);
+		return (linkedlist.size() == 0);
 	};
 
 	public E front() throws EmptyQueueException{
-		if(ll.size() == 0)
+		if(linkedlist.size() == 0)
     	{
     		throw new EmptyQueueException();
     	}
-		return (E)ll.getFirst();	
+		return (E)linkedlist.getFirst();	
 	};
 
 	public void enqueue (E element) throws FullQueueException{
-		if(ll.size() == Q_size-1)
+		if(linkedlist.size() == Q_size-1)
 		{
 			throw new FullQueueException();
 		}
-		ll.add(element);
+		linkedlist.add(element);
 	};
 
 	public E dequeue() throws EmptyQueueException{
-		if(ll.size() == 0)
+		if(linkedlist.size() == 0)
     	{
     		throw new EmptyStackException();
     	}
-    	E result = (E)ll.getFirst();
-    	ll.remove(result);
+    	E result = (E)linkedlist.getFirst();
+    	linkedlist.remove(result);
     	
     	return result;
 	};
 
 	public static void main (String[] args) throws Exception
  	{
-	    LinkedListQueue<String> arr = new LinkedListQueue<String>();
-	    //System.out.println(arr.front());
-	    //arr.dequeue();
-	    arr.enqueue ("First");
-	    arr.enqueue("Second");
-	    arr.dequeue();
-	    arr.enqueue("Third");
-	    arr.enqueue("Fourth");
+	    LinkedListQueue<String> array = new LinkedListQueue<String>();
+	    //System.out.println(array.front());
+	    //array.dequeue();
+	    array.enqueue ("First");
+	    array.enqueue("Second");
+	    array.dequeue();
+	    array.enqueue("Third");
+	    array.enqueue("Fourth");
 	     
-	    String str = arr.dequeue();
-	    boolean bool=arr.isEmpty();
+	    String str = array.dequeue();
+	    boolean bool=array.isEmpty();
 	    System.out.println(bool);
-	    System.out.println("String \""+str+"\" size = "+ arr.size()+"  "+arr.dequeue());
+	    System.out.println("String \""+str+"\" size = "+ array.size()+"  "+array.dequeue());
   	}
 };

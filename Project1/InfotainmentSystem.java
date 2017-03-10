@@ -3,9 +3,9 @@ import java.util.*;
 import java.io.*;
 
 public class InfotainmentSystem<Key, Value> {
-	HashMap<Integer, ArrayList<String>> hm = new HashMap<Integer, ArrayList<String>>();
+	HashMap<Integer, ArrayList<String>> hashmap = new HashMap<Integer, ArrayList<String>>();
 	ArrayList<String>[] MoviesTitle = (ArrayList<String>[])new ArrayList[2];
-	int[] arr = new int[100000];
+	int[] array = new int[100000];
 	public ArrayList[] MovieSolver(int movies_length) throws IOException{
 		String line;
 		
@@ -14,26 +14,26 @@ public class InfotainmentSystem<Key, Value> {
 			BufferedReader buffer = new BufferedReader(file);
 			while((line = buffer.readLine()) != null){
 				String[] strsplit = line.split(",");
-				if (hm.get(Integer.parseInt(strsplit[1])) == null) {
-				    hm.put(Integer.parseInt(strsplit[1]), new ArrayList<String>());
+				if (hashmap.get(Integer.parseInt(strsplit[1])) == null) {
+				    hashmap.put(Integer.parseInt(strsplit[1]), new ArrayList<String>());
 				}
-				hm.get(Integer.parseInt(strsplit[1])).add(strsplit[0]);
+				hashmap.get(Integer.parseInt(strsplit[1])).add(strsplit[0]);
 			};
-			Set set = hm.entrySet();
+			Set set = hashmap.entrySet();
 			Iterator i = set.iterator();
 			
 			while(i.hasNext())
 			{	
 				Map.Entry map = (Map.Entry)i.next();
          		int movie_1_length = (int)map.getKey();
-         		int diff = movies_length - movie_1_length;
-         		if(diff >= 0 && arr[diff] == 1)
+         		int difference = movies_length - movie_1_length;
+         		if(difference >= 0 && array[difference] == 1)
          		{
-         			MoviesTitle[0] = (ArrayList<String>)hm.get(diff);
-         			MoviesTitle[1] = (ArrayList<String>)hm.get(movie_1_length);
+         			MoviesTitle[0] = (ArrayList<String>)hashmap.get(difference);
+         			MoviesTitle[1] = (ArrayList<String>)hashmap.get(movie_1_length);
          			break;
          		}
-         		arr[movie_1_length] = 1;
+         		array[movie_1_length] = 1;
 			}
 		}catch(IOException e){
 			System.out.println("Exception Occurred");

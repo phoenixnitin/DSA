@@ -13,7 +13,9 @@ CLASSES = \
 		myQueue1a.java \
 		InfotainmentSystem.java \
 		LinkedListStack.java \
-		LinkedListQueue.java
+		LinkedListQueue.java \
+		TreeNode.java \
+		BSTree.java
 
 default: classes
 
