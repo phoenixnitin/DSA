@@ -10,7 +10,10 @@ CLASSES = \
 		myQueue1.java \
 		myQueue2.java \
 		Queue.java \
-		myQueue1a.java
+		myQueue1a.java \
+		InfotainmentSystem.java \
+		LinkedListStack.java \
+		LinkedListQueue.java
 
 default: classes
 
