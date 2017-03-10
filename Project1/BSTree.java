@@ -48,14 +48,13 @@ public class BSTree<Key extends Comparable<Key>, Value>
 		{	
 			if(equivalent(newKey, _root.key))
 				throw new DuplicateKeyException();
-			TreeNode<Key,Value> child = new TreeNode(newKey, newValue, null, null)
 			if(lessthan(newKey, _root.key))
-				insert(_root.left, child);
+				insert(_root.left, newKey, newValue);
 			else 
-				insert(_root.right, child);
+				insert(_root.right, newKey, newValue);
 		};
 	};
-	private void insert(TreeNode<Key,Value> node, TreeNode<Key,Value> child) throws DuplicateKeyException{
+	private void insert(TreeNode<Key,Value> node, Key newKey, Value newValue) throws DuplicateKeyException{
 		if(newKey == null)
 			throw new IllegalArgumentException("Key is null");
 		if(node == null)
@@ -65,9 +64,9 @@ public class BSTree<Key extends Comparable<Key>, Value>
 			if(equivalent(newKey, _root.key))
 				throw new DuplicateKeyException();
 			if(lessthan(newKey, _root.key))
-				insert(node.left, child);
+				insert(node.left, newKey, newValue);
 			else
-				insert(node.right, child);
+				insert(node.right, newKey, newValue);
 		};
 	};
 	/**
